@@ -1,7 +1,7 @@
 Prompt:
   The capacity of cargo container ships and port terminals are traditionally measured in twenty-foot equivalent units(TEUs), the number of 20-foot-long containers.
   Suppose that container ship arrival to a port can be modeled by a nonhomogeneous Poisson Process with the power-law intensity function λ(t) = αβ tβ−1, α, β > 0, t ≥ 0.
-  The data for 27 arrivas (in unit of 10,000 TEUs) is provided in the PortExample folder named Ecercise4.4Data.csv.
+  The data for 27 arrivas (in unit of 10,000 TEUs) is provided in the PortExample folder named Exercise4.4Data.csv.
   
  Part A:
    Estimate the parameters of the model using the regression approach.
