@@ -1,4 +1,4 @@
-```{r, Work Injuries}
+```{r, Work Injuries Part 2}
 ############################################################################################################
 #Workers' injuries at an industrial manufacturing plant occur according to a non homogeneous Poisson process
 #The rate function = A/sqrt(t) , where t is greater than or equal to 0
@@ -50,3 +50,50 @@ for (i in seq(2, 2*njumps, 2)) {
 plot(time, state, type="l", col=2, 
 panel.first=grid(),main="Injury v. Years Plot",xlab="Years",ylab="Injuries",sub="By Noah Gallagher")
 ```
+
+```{r, Work Injuries Part 3}
+#Assume the 100th injury occurred 12.25 years after the plant was opened, simulate a trajectory.
+
+#setting parameters
+years<- 12.25
+rate<- 30*sqrt(years)
+
+#setting seed
+set.seed(832749239)
+
+#generating N(t)
+N<- rpois(1,rate)
+
+#generating N(t) standard uniforms
+u<- 1:N
+for(i in 1:N)
+u[i]<- runif(1)
+
+#sorting u (standard uniforms)
+u.sorted<- sort(u)
+
+#computing N(t) injury times
+s<- years*u.sorted**2
+
+#generating points for plotting injuries against years
+time<- 1:2*N
+state<- 1:2*N
+
+#specifying initial values for time and state
+time[1]<- 0
+state[1]<- 0
+
+#for loop executing simulation
+for (i in seq(2, 2*N, 2)) {
+  time[i]<- s[i/2]-0.01
+  time[i+1]<- s[i/2]
+  state[i]<- state[i-1]
+  state[i+1]<- state[i-1]+1
+}
+
+#plotting simulated trajectory of injuries against years
+plot(time, state, type="l", col=2, 
+panel.first=grid(),main="Injury v. Years Plot",xlab="Years",ylab="Injuries",sub="By Noah Gallagher")
+
+```
+
