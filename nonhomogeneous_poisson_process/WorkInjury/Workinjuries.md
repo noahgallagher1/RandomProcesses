@@ -24,6 +24,8 @@ Part 2) Find the distribution of the time elapsing between two injuries. Simulat
         We can now simulate the code for trajectories of 100 injuries.
         
         --> See workinjuries.R ``Part 2``
+        
+        ![image](https://user-images.githubusercontent.com/61672116/97119413-48c66380-16cd-11eb-860d-a6ca564eb78f.png)
 
         Thus, our max value is 13.70859 and our min value is 0. The time range of this trajectory is [0, 13.70859].
 
@@ -35,3 +37,5 @@ Part 3)Assume the 100th injury occurred 12 years and 3 months (12.25 years) afte
         Now, we can simulate this trajectory with R.
 
         --> See workinjuries.R ``Part 3``
+        
+        ![image](https://user-images.githubusercontent.com/61672116/97119443-7a3f2f00-16cd-11eb-85b8-47365b4eb049.png)
